@@ -1,0 +1,13 @@
+{
+  "actorSpecification": 1,
+  "name": "fec-campaign-finance-pro",
+  "title": "FEC Campaign Finance Pro (Donors, Committees, Money)",
+  "description": "Campaign money from the FEC's official API: candidate search, committee search, itemized individual contributions (Schedule A) and independent expenditures (Schedule E) in clean rows with people, amounts, employers and dates. Free API key supported.",
+  "version": "0.0",
+  "buildTag": "latest",
+  "minMemoryMbytes": 256,
+  "output": "./output_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  }
+}

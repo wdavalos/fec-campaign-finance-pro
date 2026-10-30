@@ -1,0 +1,11 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "FEC Campaign Finance Pro output",
+  "properties": {
+    "results": {
+      "type": "string",
+      "template": "{{links.apiDefaultDatasetUrl}}/items",
+      "description": "Clean FEC rows. Candidates: id, name, party, office, state, district, cycle, filing dates. Committees: id, name, designation, type, state, party, treasurer. Contributions: contributor, employer, occupation, amount, date, committee and candidate. Expenditures: payee, amount, date, description, committee, supported/opposed candidate."
+    }
+  }
+}

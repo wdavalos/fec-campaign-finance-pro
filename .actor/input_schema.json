@@ -1,0 +1,102 @@
+{
+  "title": "FEC Campaign Finance Pro input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "searchType": {
+      "title": "Search type",
+      "type": "string",
+      "editor": "select",
+      "enum": ["candidates", "committees", "contributions", "expenditures"],
+      "enumTitles": ["Candidate search", "Committee search", "Itemized contributions (Schedule A)", "Independent expenditures (Schedule E)"],
+      "description": "What to pull from the FEC: candidates, committees, itemized individual contributions, or independent expenditures.",
+      "default": "candidates"
+    },
+    "query": {
+      "title": "Search text",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Name to search. For candidates and committees this is the q filter; for contributions it matches contributor_name; for expenditures it matches payee_name. Empty returns all (combined with other filters).",
+      "default": ""
+    },
+    "committeeId": {
+      "title": "Committee ID",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Optional FEC committee ID (e.g. C00401224). Required for contribution and expenditure pulls to stay fast; contributions/expenditures without it can time out on the FEC side.",
+      "default": ""
+    },
+    "candidateId": {
+      "title": "Candidate ID",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Optional FEC candidate ID (e.g. H6TX34072) for expenditure pulls.",
+      "default": ""
+    },
+    "office": {
+      "title": "Office (candidate search)",
+      "type": "string",
+      "editor": "select",
+      "enum": ["", "H", "S", "P"],
+      "enumTitles": ["Any", "House", "Senate", "President"],
+      "description": "Optional office filter for candidate search.",
+      "default": ""
+    },
+    "state": {
+      "title": "State",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Optional two-letter state filter (e.g. TX).",
+      "default": ""
+    },
+    "party": {
+      "title": "Party",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Optional party filter for candidates/committees (e.g. DEM, REP).",
+      "default": ""
+    },
+    "twoYearPeriod": {
+      "title": "FEC two-year transaction period",
+      "type": "integer",
+      "editor": "number",
+      "description": "FEC cycle year for money queries. Defaults to 2026 (the current cycle).",
+      "default": 2026
+    },
+    "dateFrom": {
+      "title": "Date from",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Optional date filter (YYYY-MM-DD) for contributions/expenditures.",
+      "default": ""
+    },
+    "dateTo": {
+      "title": "Date to",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Optional date filter (YYYY-MM-DD) for contributions/expenditures.",
+      "default": ""
+    },
+    "minAmount": {
+      "title": "Min amount (contributions)",
+      "type": "integer",
+      "editor": "number",
+      "description": "Optional minimum contribution amount.",
+      "default": 0
+    },
+    "maxItems": {
+      "title": "Max result rows",
+      "type": "integer",
+      "editor": "number",
+      "description": "Hard cap on rows pushed. The run stops as soon as the cap is hit so you never pay for results you didn't ask for.",
+      "default": 10
+    },
+    "apiKey": {
+      "title": "FEC API key (optional)",
+      "type": "string",
+      "editor": "textfield",
+      "description": "OpenFEC API key. DEMO_KEY works for light tests but is shared and rate limited; get a free key in one minute at https://api.data.gov/signup/ and paste it here for reliable volume.",
+      "default": ""
+    }
+  }
+}

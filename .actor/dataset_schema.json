@@ -1,0 +1,146 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "type": "object",
+    "properties": {
+      "searchType": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "reason": {
+        "type": "string"
+      },
+      "httpStatus": {
+        "type": "integer"
+      },
+      "candidateId": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "party": {
+        "type": "string"
+      },
+      "office": {
+        "type": "string"
+      },
+      "state": {
+        "type": "string"
+      },
+      "district": {
+        "type": "string"
+      },
+      "lastCycle": {
+        "type": "integer"
+      },
+      "hasRaisedFunds": {
+        "type": "boolean"
+      },
+      "incumbentStatus": {
+        "type": "string"
+      },
+      "firstFiled": {
+        "type": "string"
+      },
+      "lastFiled": {
+        "type": "string"
+      },
+      "committeeId": {
+        "type": "string"
+      },
+      "committeeIds": {
+        "type": "array"
+      },
+      "linkedCandidates": {
+        "type": "array"
+      },
+      "designation": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      },
+      "treasurer": {
+        "type": "string"
+      },
+      "fecLink": {
+        "type": "string",
+        "format": "uri"
+      },
+      "contributor": {
+        "type": "string"
+      },
+      "employer": {
+        "type": "string"
+      },
+      "occupation": {
+        "type": "string"
+      },
+      "city": {
+        "type": "string"
+      },
+      "amount": {
+        "type": "number"
+      },
+      "receiptDate": {
+        "type": "string"
+      },
+      "aggregateYtd": {
+        "type": "number"
+      },
+      "committeeName": {
+        "type": "string"
+      },
+      "candidateName": {
+        "type": "string"
+      },
+      "payee": {
+        "type": "string"
+      },
+      "expenditureDate": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "supportOrOppose": {
+        "type": "string"
+      },
+      "filingNumber": {
+        "type": "string"
+      },
+      "pdfUrl": {
+        "type": "string",
+        "format": "uri"
+      }
+    }
+  },
+  "views": {
+    "overview": {
+      "title": "FEC rows",
+      "transformation": {
+        "fields": [
+          "searchType",
+          "name",
+          "party",
+          "state",
+          "contributor",
+          "payee",
+          "amount",
+          "receiptDate",
+          "expenditureDate",
+          "committeeName",
+          "candidateName",
+          "fecLink",
+          "pdfUrl"
+        ]
+      },
+      "display": {
+        "component": "table"
+      }
+    }
+  }
+}

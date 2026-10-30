@@ -1,0 +1,11 @@
+{
+  "name": "fec-campaign-finance-pro",
+  "version": "0.0.1",
+  "description": "FEC campaign finance from the official OpenFEC API: candidate and committee search, itemized contributions (Schedule A) and independent expenditures (Schedule E) as clean rows.",
+  "main": "src/main.js",
+  "dependencies": {
+    "apify": "^3.4.0",
+    "got-scraping": "^3.2.0"
+  },
+  "scripts": { "start": "node src/main.js" }
+}
